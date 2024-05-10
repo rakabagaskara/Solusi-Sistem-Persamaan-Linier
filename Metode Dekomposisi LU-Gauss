@@ -19,7 +19,6 @@ def lu_gauss_method(A, b):
                     sum += L[k][j] * U[j][i]
                 L[k][i] = (A[k][i] - sum) / U[i][i]
 
-    # Substitusi maju (forward substitution)
     y = [0] * n
     for i in range(n):
         sum = 0
@@ -27,7 +26,6 @@ def lu_gauss_method(A, b):
             sum += L[i][j] * y[j]
         y[i] = b[i] - sum
 
-    # Substitusi mundur (backward substitution)
     x = [0] * n
     for i in range(n - 1, -1, -1):
         sum = 0
